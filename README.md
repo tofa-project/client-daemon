@@ -1,2 +1,2 @@
 # client-daemon
-Tofa client daemon
+client-daemon
