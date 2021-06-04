@@ -95,7 +95,7 @@ func StartService(a *osat.App) error {
 
 	tErr := <-eCh
 	if tErr == nil {
-		log.Printf("\tOK [%s.onion:%s/%s]", oService.ID, data["port"], data["path"])
+		log.Printf("\tOK [%s.onion:%s]", oService.ID, data["port"])
 
 		go resetRecVars(a)
 
