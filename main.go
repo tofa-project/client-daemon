@@ -55,8 +55,6 @@ func main() {
 	}
 	glob.V_WS_RPC_HEADER_SECRET = strings.Trim(wsKey, "\n")
 
-	ws_rpc.Init()
-
 	appdata.Init()
 
 	db.Init()
@@ -64,6 +62,8 @@ func main() {
 	// attempt to retrieve data from database
 	// this will crash the daemon if password is incorrect
 	db.GetApps()
+
+	ws_rpc.Init()
 
 	tserv.Init()
 
