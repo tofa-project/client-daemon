@@ -20,3 +20,5 @@ var V_WS_RPC_HOST string
 
 // websocket secret header to prevent other malicious processes from connecting
 var V_WS_RPC_HEADER_SECRET string
+
+var V_TOR_BIN_PATH string

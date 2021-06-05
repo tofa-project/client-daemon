@@ -61,6 +61,10 @@ func main() {
 
 	db.Init()
 
+	// attempt to retrieve data from database
+	// this will crash the daemon if password is incorrect
+	db.GetApps()
+
 	tserv.Init()
 
 	oserv.Init()

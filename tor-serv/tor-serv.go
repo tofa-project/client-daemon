@@ -8,7 +8,6 @@ import (
 	"path/filepath"
 
 	"github.com/cretz/bine/tor"
-	// "github.com/ipsn/go-libtor"
 	"github.com/tofa-project/client-daemon/glob"
 )
 
@@ -18,14 +17,10 @@ var Instance *tor.Tor
 func Init() {
 	log.Print("Starting Tor daemon...")
 
-	exPath, _ := os.Executable()
-	torPath := filepath.Dir(exPath)
-
-	tInst, err := tor.Start(context.TODO(),
+	tInst, err := tor.Start(context.Background(),
 		&tor.StartConf{
-			//ProcessCreator: libtor.Creator,
 			DebugWriter: os.Stderr,
-			ExePath:     filepath.FromSlash(torPath + "/tor.bin"),
+			ExePath:     filepath.FromSlash(glob.V_TOR_BIN_PATH),
 			DataDir:     filepath.FromSlash(glob.V_DATA_DIR + glob.C_TOR_DIR),
 			TorrcFile:   filepath.FromSlash(glob.V_DATA_DIR + glob.C_TOR_DIR + "/torrc"),
 		},
